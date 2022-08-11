@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+
+    <div class="row">
+        <div class="col s12 main-text center">Jot Pad API</div>
+
+        <div class="col s12 center api-text">visit our <a href="{% url 'schema-redoc' %}">redoc</a> / <a href="{% url 'schema-swagger-ui' %}">swagger</a> api page</div>
+    </div>
+
+{% endblock main %}

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+
+body {
+    height: 100%;
+    background: #EDEDED;
+    font-family: "New Tegomin", Lato, sans-serif, serif;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+
+.main-text {
+    /* color: var(--rich-gold); */
+    font-family: "New Tegomin", Lato, sans-serif, serif;
+    font-size: 98px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.api-text {
+    /* color: var(--rich-gold); */
+    font-family: "New Tegomin", Lato, sans-serif, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 200;
+}

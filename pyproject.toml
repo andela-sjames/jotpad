@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "jotpad"
+version = "0.1.0"
+description = "A simple jotting API application using python Django"
+authors = ["samuelvarejames <samuelvarejames@gmail.com>"]
+license = "GNU General Public License v3.0"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.1"
+djangorestframework = "^3.13.1"
+Markdown = "^3.4.1"
+django-filter = "^22.1"
+drf-yasg = "^1.21.3"
+psycopg2-binary = "^2.9.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
