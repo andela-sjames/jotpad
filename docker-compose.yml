@@ -23,6 +23,36 @@ services:
       interval: 5s
       timeout: 10s
       retries: 5
+
+  # Using nginx as reverse proxy
+  # nginx:
+  #   container_name: nginx_server
+  #   build:
+  #       context: .
+  #       dockerfile: Dockerfile.local_nginx
+  #   depends_on:
+  #     - web
+  #   ports:
+  #     - "0.0.0.0:80:80"
+  #   volumes:
+  #     - /var/run/docker.sock:/tmp/docker.sock:ro
+
+
+  # Using traefik as reverse proxy
+  reverse-proxy:
+    # The official v2 Traefik docker image
+    image: traefik:v2.9
+    # Enables the web UI and tells Traefik to listen to docker
+    command: --api.insecure=true --providers.docker
+    ports:
+      # The HTTP port
+      - "80:80"
+      # The Web UI (enabled by --api.insecure=true)
+      - "8080:8080"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
+
   web:
     restart: always
     container_name: jotpad_web
@@ -30,6 +60,8 @@ services:
     build: .
     volumes:
       - .:/app
+    labels:
+      - "traefik.http.routers.web.rule=Host(`jotpad.docker.localhost`)"
     ports:
       - "8000:8000"
     depends_on:
@@ -52,7 +84,6 @@ services:
       - POSTGRES_USER=jotpad_dev
       - POSTGRES_PASSWORD=jotpad_dev
       - POSTGRESDB_HOST=database
-
 
 networks:
   default:
