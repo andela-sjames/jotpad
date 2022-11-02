@@ -24,20 +24,6 @@ services:
       timeout: 10s
       retries: 5
 
-  # Using nginx as reverse proxy
-  # nginx:
-  #   container_name: nginx_server
-  #   build:
-  #       context: .
-  #       dockerfile: Dockerfile.local_nginx
-  #   depends_on:
-  #     - web
-  #   ports:
-  #     - "0.0.0.0:80:80"
-  #   volumes:
-  #     - /var/run/docker.sock:/tmp/docker.sock:ro
-
-
   # Using traefik as reverse proxy
   reverse-proxy:
     # The official v2 Traefik docker image
