@@ -64,7 +64,6 @@ services:
       poetry run pad/manage.py runserver 0.0.0.0:8000
     environment:
       - DJANGO_SETTINGS_MODULE=jotpad.settings.dev
-      - DATABASE_URL=postgresql://jotpad_dev:jotpad_dev@database:5432/jotpad_dev
       - POSTGRES_DB=jotpad_dev
       - POSTGRESDB_PORT=5432
       - POSTGRES_USER=jotpad_dev
