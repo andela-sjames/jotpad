@@ -20,6 +20,10 @@ DATABASES = {}
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=False)
 
+# django 4.1
+# The line below requires that you update the middleware config by adding
+# 'whitenoise.middleware.WhiteNoiseMiddleware',
+# to the middleware list in base.py
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # staticfiles
