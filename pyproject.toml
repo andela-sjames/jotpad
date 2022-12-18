@@ -13,6 +13,8 @@ Markdown = "^3.4.1"
 django-filter = "^22.1"
 drf-yasg = "^1.21.3"
 psycopg2-binary = "^2.9.3"
+whitenoise = "^6.2.0"
+dj-database-url = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 
