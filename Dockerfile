@@ -52,8 +52,7 @@ RUN adduser --disabled-password --gecos '' jotpad && \
     usermod -aG docker jotpad
 
 # grant newly created user permissions on essential files
-RUN chown -R jotpad:$(id -gn jotpad) /app/ && \
-    chmod +x scripts/start_server.sh
+RUN chown -R jotpad:$(id -gn jotpad) /app/
 
 # change user to newly created user
 USER jotpad
